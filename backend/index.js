@@ -1,8 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./careerCarve.db');
+const db = require('./database'); // Import the database.js to ensure tables are created
 const app = express();
 
 // Define the PORT
@@ -11,12 +10,12 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-//Home Route Welcoming Mesaage
+// Home Route Welcoming Message
 app.get('/', (request, response) => {
     response.json({
         message: "Welcome to CareerCarve Backend Setup..."
-    })
-})
+    });
+});
 
 // Fetching all mentors list
 app.get('/mentors', (request, response) => {
