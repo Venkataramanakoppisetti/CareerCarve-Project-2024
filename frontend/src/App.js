@@ -1,13 +1,14 @@
+// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import PaymentPage from './pages/PaymentPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BookingForm from './components/BookingForm';
+import PaymentPage from './components/PaymentPage';
 
 const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<BookingForm />} />
                 <Route path="/payment" element={<PaymentPage />} />
             </Routes>
         </Router>

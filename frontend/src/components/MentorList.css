@@ -1,0 +1,13 @@
+/* src/components/MentorList.css */
+.mentor-list-container {
+    margin-bottom: 20px;
+}
+
+.ant-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.ant-card:hover {
+    transform: scale(1.05);
+}
