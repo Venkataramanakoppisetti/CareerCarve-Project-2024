@@ -4,8 +4,11 @@ const bodyParser = require('body-parser');
 const db = require('./database'); // Import the database.js to ensure tables are created
 const app = express();
 
-// Define the PORT
-const PORT = 10000;
+// Use the PORT environment variable, or default to 10000
+const PORT = process.env.PORT || 10000;
+
+// Bind to 0.0.0.0 so it listens on all network interfaces
+const HOST = '0.0.0.0';
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -106,7 +109,7 @@ app.get('/bookings', (request, response) => {
     });
 });
 
-// Listen to the PORT
-app.listen(PORT, () => {
-    console.log(`Server is running at ${PORT}`);
+// Listen to the PORT and bind to 0.0.0.0
+app.listen(PORT, HOST, () => {
+    console.log(`Server is running at http://${HOST}:${PORT}`);
 });
