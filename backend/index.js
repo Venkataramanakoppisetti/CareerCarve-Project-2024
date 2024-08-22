@@ -5,7 +5,7 @@ const db = require('./database'); // Import the database.js to ensure tables are
 const app = express();
 
 // Define the PORT
-const PORT = 5000;
+const PORT = 10000;
 
 app.use(cors());
 app.use(bodyParser.json());
